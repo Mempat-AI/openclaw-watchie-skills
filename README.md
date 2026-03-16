@@ -1,57 +1,53 @@
-# Mempat AI OpenClaw Skills
+# Watchie OpenClaw Skills
 
-Reusable OpenClaw skills for Mempat AI workflows.
+**Language:** English | [中文](./README.zh-CN.md) | [Bahasa Melayu](./README.ms.md)
+
+Reusable OpenClaw skills for Watchie workflows.
 
 ## Included skills
 
-- `gen-music`: generate songs through an ACE-Step-compatible API backend, save stable output files, and optionally hand the result to Clawatch playback.
-- `youtube-music`: experimental personal-use helper that downloads YouTube or YouTube Music audio into a stable local file, optionally to hand off to Clawatch playback.
-- `story-teller`: writing-focused storytelling skill for vivid, catchy, voice-friendly stories with stronger hooks, sharper images, and less generic AI prose.
+- `gen-music`: generate songs through an ACE-Step-compatible API backend, save stable output files, and optionally play results on Watchie.
+- `youtube-music`: experimental personal-use helper that downloads YouTube or YouTube Music audio into stable local files, with optional Watchie playback.
+- `story-teller`: writing-focused storytelling skill for vivid, voice-friendly stories.
 
 ## Install
 
 ```bash
-git clone https://github.com/Mempat-AI/openclaw-mempat-skills.git
+git clone https://github.com/Mempat-AI/openclaw-watchie-skills.git
 mkdir -p ~/.openclaw/skills
-cp -R openclaw-mempat-skills/skills/gen-music ~/.openclaw/skills/
-cp -R openclaw-mempat-skills/skills/youtube-music ~/.openclaw/skills/
-cp -R openclaw-mempat-skills/skills/story-teller ~/.openclaw/skills/
+cp -R openclaw-watchie-skills/skills/gen-music ~/.openclaw/skills/
+cp -R openclaw-watchie-skills/skills/youtube-music ~/.openclaw/skills/
+cp -R openclaw-watchie-skills/skills/story-teller ~/.openclaw/skills/
 ```
 
-Restart OpenClaw Gateway or start a new session after copying the skill.
+Restart OpenClaw Gateway or start a new OpenClaw session after copying skills.
 
-## Recommended Clawatch setup
+## Recommended Watchie setup
 
-1. Install the `@mempat-ai/clawatch` plugin.
-2. Install `gen-music` if you want the text-to-music workflow.
-3. Install `youtube-music` if you want an experimental YouTube/YouTube Music downloader.
-4. Sign in and pair the watch:
-   - `openclaw clawatch login <countryCode> <phoneNumber>`
-   - `openclaw clawatch pair <imei>`
-5. Point `gen-music` at an ACE-Step-compatible backend. This can be a local server on `http://127.0.0.1:8001` or a remote compatible endpoint.
+1. Install the Watchie plugin package: `@mempat-ai/watchie`.
+2. Sign in and pair your watch:
+   - `openclaw watchie login <countryCode> <phoneNumber>`
+   - `openclaw watchie pair <imei>`
+3. Install `gen-music` if you want text-to-music flows.
+4. Install `youtube-music` if you want best-effort YouTube/YouTube Music downloads.
+5. Point `gen-music` to your ACE-Step-compatible backend (local or remote).
 
 ## Example requests
 
 - `Generate a playful one-minute beach pop song and save the audio.`
-- `Generate a happy song about rising waves and play it on watch 860000019579324.`
-- `Write a short summer pop song from these lyrics, then send it to my watch.`
+- `Generate a happy song and play it on watch 860000019579324.`
 - `Download this YouTube Music link as mp3.`
 - `Find this song on YouTube Music, save it locally, then play it on my watch.`
-- `Tell me a bedtime story about a brave rabbit that does not sound AI-generated.`
-- `Write a funny, fast-moving story for a seven-year-old about a lost mooncake.`
+- `Tell me a bedtime story about a brave rabbit.`
 
 ## Requirements
 
 - Python 3
-- An ACE-Step-compatible API backend, local or remote
-- `ffmpeg` plus local `yt-dlp` for `youtube-music`
-- The Clawatch plugin if you want watch playback
+- `ffmpeg` and local `yt-dlp` for `youtube-music`
+- An ACE-Step-compatible backend for `gen-music`
+- Watchie plugin, if you want watch playback
 
-## Backend choice
+## Notes
 
-`gen-music` does not install or bundle ACE-Step. Users can connect it to:
-
-- a local ACE-Step server they already run themselves, or
-- a remote ACE-Step-compatible endpoint by setting `baseUrl`.
-
-If you want community-hosted guidance for ACE-Step music generation, see the upstream OpenClaw community skills such as `ace-music`.
+- `gen-music` does not bundle ACE-Step model weights or service binaries.
+- You can use either a local ACE-Step server or a remote compatible endpoint.

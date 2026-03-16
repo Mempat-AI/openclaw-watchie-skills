@@ -1,6 +1,6 @@
 ---
 name: gen-music
-description: Generate songs from prompts or lyrics through an ACE-Step-compatible API backend. Use when users want text-to-music, lyrics-to-song, fast prompt iteration, stable output files, or to generate music and then play the result on Clawatch.
+description: Generate songs from prompts or lyrics through an ACE-Step-compatible API backend. Use when users want text-to-music, lyrics-to-song, fast prompt iteration, stable output files, or to generate music and then play the result on Watchie.
 metadata:
   {
     "openclaw":
@@ -39,7 +39,7 @@ Defaults are tuned for fast local iteration:
 - An ACE-Step-compatible API backend is already available, commonly a local server at `http://127.0.0.1:8001` but possibly a remote endpoint
 - The user wants text-to-music, lyrics-to-song, or quick style variations
 - The user wants a single command that submits, polls, and returns saved files
-- The user wants music generated locally and then played on Clawatch
+- The user wants music generated locally and then played on Watchie
 - The user already has access to a local or remote ACE-Step-compatible backend
 
 ## Run
@@ -78,13 +78,13 @@ Useful flags:
 - `--base-url http://127.0.0.1:8001` for local backends
 - `--base-url https://your-remote-endpoint` for remote backends
 
-## Clawatch playback
+## Watchie playback
 
-If the user also wants the result played on Clawatch:
+If the user also wants the result played on Watchie:
 
 1. Run the generator and wait for the saved output file paths.
 2. Pick the final `.mp3` path from the script output or `manifest.json`.
-3. Call `clawatch_play_audio` with:
+3. Call `watchie_play_audio` with:
    - `imei`: the explicit watch IMEI
    - `filePath`: the saved local audio path
    - `title`: optional short label

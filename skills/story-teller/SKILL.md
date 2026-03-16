@@ -86,7 +86,7 @@ Do not stop to ask follow-up questions unless the user explicitly wants collabor
 
 ## Voice-friendly output
 
-For stories likely to be read aloud or sent to Clawatch:
+For stories likely to be read aloud or sent to Watchie:
 
 - use clean paragraphing
 - avoid markdown ornamentation

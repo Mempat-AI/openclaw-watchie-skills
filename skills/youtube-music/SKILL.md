@@ -1,6 +1,6 @@
 ---
 name: youtube-music
-description: Experimental helper that downloads audio from YouTube or YouTube Music URLs, or from simple YouTube search queries, into stable local files. Use when the user wants a personal-use, best-effort way to turn a YouTube or YouTube Music source into a local audio file, optionally to play it on Clawatch.
+description: Experimental helper that downloads audio from YouTube or YouTube Music URLs, or from simple YouTube search queries, into stable local files. Use when the user wants a personal-use, best-effort way to turn a YouTube or YouTube Music source into a local audio file, optionally to play it on Watchie.
 metadata:
   {
     "openclaw":
@@ -28,7 +28,7 @@ python3 {baseDir}/scripts/fetch.py --query "lofi study beats"
 
 - The user wants a YouTube or YouTube Music URL turned into a local audio file.
 - The user wants a simple search query resolved to one downloadable result.
-- The user wants the resulting audio later played on Clawatch.
+- The user wants the resulting audio later played on Watchie.
 
 ## Inputs
 
@@ -67,9 +67,9 @@ The script writes:
 
 ## Delivery behavior
 
-- In a `clawatch` conversation, do not ask whether to send the file or play it. After download completes, call `clawatch_play_audio` immediately with the saved `filePath`. Do not pass a different watch IMEI in the same clawatch session; use the current watch only.
+- In a `watchie` conversation, do not ask whether to send the file or play it. After download completes, call `watchie_play_audio` immediately with the saved `filePath`. Do not pass a different watch IMEI in the same watchie session; use the current watch only.
 - In a Telegram conversation, prefer sending the downloaded file back as media instead of asking follow-up questions.
-- Outside those channels, return the saved local file path unless the user explicitly asks for Clawatch playback.
+- Outside those channels, return the saved local file path unless the user explicitly asks for Watchie playback.
 
 ## Notes
 
